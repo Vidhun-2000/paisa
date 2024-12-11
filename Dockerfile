@@ -14,7 +14,7 @@ COPY . .
 COPY --from=web /usr/src/paisa/web/static ./web/static
 RUN CGO_ENABLED=1 go build
 
-FROM alpine:3.18
+FROM alpine:3.21.0
 RUN apk --no-cache add ca-certificates ledger
 WORKDIR /root/
 COPY --from=go /usr/src/paisa/paisa ./
